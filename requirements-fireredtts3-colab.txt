@@ -1,0 +1,7 @@
+# Colab-safe FireRedTTS3 dependencies: preserve the preinstalled CUDA PyTorch stack.
+torchcodec==0.7.0
+transformers==5.6.2
+einops==0.8.2
+python-dotenv
+regex
+safetensors

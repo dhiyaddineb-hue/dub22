@@ -143,3 +143,22 @@ python3 scripts/xtts_dub.py \
 ### نسخة XTTS v2 المحسّنة
 
 توجد نسخة محسّنة في `outputs/arabic_dub_xtts_v2_final.mp4`. اعتمدت هذه النسخة مراجعًا منقّاة، حوارًا مجمّعًا لكل متحدث، حرارة توليد 0.45، وسرعة 1.0، مع قصّ صوتي تلقائي داخل نافذة كل مقطع عند الحاجة. ويعرض `manifests/xtts_final_transcript.txt` تفريغ فحص الوضوح للناتج.
+
+
+## Chatterbox Multilingual V3 — المسار البديل
+
+أضيف مسار بديل يعتمد على أحدث كود Chatterbox الرسمي من GitHub. النموذج متعدد اللغات ويدعم العربية مع مرجع صوتي، ويستخدم `exaggeration` و`cfg-weight` للتحكم في التعبير والإيقاع.
+
+```bash
+python3 -m pip install -r requirements-chatterbox.txt
+python3 scripts/chatterbox_dub.py \
+  --input assets/input/source.mp4 \
+  --manifest manifests/dialogue_ar_grouped.json \
+  --output outputs/arabic_dub_chatterbox_v3.mp4 \
+  --device cpu \
+  --exaggeration 0.55 \
+  --cfg-weight 0.35 \
+  --temperature 0.75
+```
+
+تم تشغيل هذا المسار فعليًا على الفيديو الموجود في workspace، ونجح في توليد الصوت وتركيب فيديو صالح مدته 24.842 ثانية. المخرجات تحمل علامة مائية صوتية مدمجة من النموذج وفق توثيقه.

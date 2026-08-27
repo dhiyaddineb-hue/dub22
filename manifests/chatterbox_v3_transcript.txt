@@ -1,0 +1,38 @@
+Starting Speech-to-Text conversion...
+Video file detected: outputs/arabic_dub_chatterbox_v3.mp4, file size: 5.92 MB
+File size exceeds limit, converting to audio (64kbps)...
+Converting video to audio (bitrate: 64k)...
+Audio conversion completed. Saved to: outputs/arabic_dub_chatterbox_v3_converted_20260827_114750.mp3
+Transcribing audio file: outputs/arabic_dub_chatterbox_v3_converted_20260827_114750.mp3, file size: 0.19 MB
+Transcription may take some time depending on file size and audio length...
+Transcription completed successfully!
+
+TRANSCRIPTION RESULT:
+Total Duration: 24.9 seconds
+Language: ara
+Timestamped segments:
+[00:00.8 - 00:01.9] تستطيع فعل ذلك.
+[00:01.9 - 00:11.3] أليس كذلك يا فلوكي؟ منّني مخت- لا، أستطيع فعل ذلك يا رغمار.
+[00:11.3 - 00:13.6] أستطيع فعله من أجلك.
+[00:13.6 - 00:17.3] كل ما أفعله يا رغمار هو من أجلك.
+Complete transcription result saved to: /home/ubuntu/dub22/outputs/arabic_dub_chatterbox_v3_converted_20260827_114750_transcription_20260827_114751.json
+Plain text transcription saved to: /home/ubuntu/dub22/outputs/arabic_dub_chatterbox_v3_converted_20260827_114750_transcription_20260827_114751.txt
+
+The video has been automatically converted to an audio file and saved at outputs/arabic_dub_chatterbox_v3_converted_20260827_114750.mp3
+[2J[H[3Jmanus-speech-to-text outputs/arabic_dub_chatterbox_v3.mp4
+Starting Speech-to-Text conversion...
+Video file detected: outputs/arabic_dub_chatterbox_v3.mp4, file size: 5.92 MB
+File size exceeds limit, converting to audio (64kbps)...
+Transcribing audio file: outputs/arabic_dub_chatterbox_v3_converted_20260827_114750.mp3, file size: 0.19 MB
+Transcription may take some time depending on file size and audio length...
+
+Snippet of transcribed content:
+[00:00.8 - 00:01.9] تستطيع فعل ذلك.
+[00:01.9 - 00:11.3] أليس كذلك يا فلوكي؟ منّني مخت- لا، أستطيع فعل ذلك يا رغمار.
+[00:11.3 - 00:13.6] أستطيع فعله من أجلك.
+[00:13.6 - 00:17.3] كل ما أفعله يا رغمار هو من أجلك.
+
+The video has been automatically converted to an audio file and saved at outputs/arabic_dub_chatterbox_v3_converted_20260827_114750.mp3
+
+Completed transcription, JSON saved to /home/ubuntu/dub22/outputs/arabic_dub_chatterbox_v3_converted_20260827_114750_transcription_20260827_114751.json
+Plain text transcription saved to /home/ubuntu/dub22/outputs/arabic_dub_chatterbox_v3_converted_20260827_114750_transcription_20260827_114751.txt

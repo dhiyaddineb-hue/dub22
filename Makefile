@@ -17,3 +17,6 @@ professional-dub:
 
 xtts-dub:
 	python3 scripts/xtts_dub.py --input assets/input/source.mp4 --manifest manifests/dialogue_ar.json --output outputs/arabic_dub_xtts_v2.mp4 --workdir assets/xtts_segments --device cpu
+
+chatterbox-dub:
+	python3 scripts/chatterbox_dub.py --input assets/input/source.mp4 --manifest manifests/dialogue_ar_grouped.json --output outputs/arabic_dub_chatterbox_v3.mp4 --workdir assets/chatterbox_segments --device cpu --exaggeration 0.55 --cfg-weight 0.35 --temperature 0.75

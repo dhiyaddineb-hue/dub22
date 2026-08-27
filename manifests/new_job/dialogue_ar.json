@@ -1,0 +1,127 @@
+{
+  "source": "assets/input/new_job/source.mp4",
+  "language": "ar",
+  "voice_mode": "chatterbox_v3_reference_voice",
+  "segments": [
+    {
+      "id": "line_01",
+      "speaker": "speaker_1_male",
+      "start": 0.4,
+      "source_end": 1.6,
+      "text": "لماذا لم تتزوج؟",
+      "reference_audio": "assets/reference/new_job/speaker_1_clean.wav"
+    },
+    {
+      "id": "line_02",
+      "speaker": "speaker_1_male",
+      "start": 1.6,
+      "source_end": 4.4,
+      "text": "أنا متأكد أنني لم أُخلق للزواج.",
+      "reference_audio": "assets/reference/new_job/speaker_1_clean.wav"
+    },
+    {
+      "id": "line_03",
+      "speaker": "speaker_1_male",
+      "start": 4.4,
+      "source_end": 6.8,
+      "text": "أنا أعزب عن قناعة.",
+      "reference_audio": "assets/reference/new_job/speaker_1_clean.wav"
+    },
+    {
+      "id": "line_04",
+      "speaker": "speaker_1_male",
+      "start": 6.8,
+      "source_end": 8.7,
+      "text": "حالتي ميؤوس منها.",
+      "reference_audio": "assets/reference/new_job/speaker_1_clean.wav"
+    },
+    {
+      "id": "line_05",
+      "speaker": "speaker_1_male",
+      "start": 8.7,
+      "source_end": 12.7,
+      "text": "الزواج سيجعلني مخادعًا، وأنا لا أريد ذلك أبدًا.",
+      "reference_audio": "assets/reference/new_job/speaker_1_clean.wav"
+    },
+    {
+      "id": "line_06",
+      "speaker": "speaker_2_female",
+      "start": 12.7,
+      "source_end": 15.7,
+      "text": "أظنك تتظاهر بالقوة فحسب.",
+      "reference_audio": "assets/reference/new_job/speaker_2_clean.wav"
+    },
+    {
+      "id": "line_07",
+      "speaker": "speaker_1_male",
+      "start": 15.7,
+      "source_end": 18.5,
+      "text": "لا، أنا قوي.",
+      "reference_audio": "assets/reference/new_job/speaker_1_clean.wav"
+    },
+    {
+      "id": "line_08",
+      "speaker": "speaker_2_female",
+      "start": 18.5,
+      "source_end": 19.8,
+      "text": "قوي أمام من؟",
+      "reference_audio": "assets/reference/new_job/speaker_2_clean.wav"
+    },
+    {
+      "id": "line_09",
+      "speaker": "speaker_2_female",
+      "start": 19.8,
+      "source_end": 21.8,
+      "text": "آمل ألا يكون ذلك أمامي.",
+      "reference_audio": "assets/reference/new_job/speaker_2_clean.wav"
+    },
+    {
+      "id": "line_10",
+      "speaker": "speaker_1_male",
+      "start": 21.8,
+      "source_end": 28.7,
+      "text": "أظن أن توقعات الآخرين وافتراضاتهم هي ما يسبب الألم.",
+      "reference_audio": "assets/reference/new_job/speaker_1_clean.wav"
+    },
+    {
+      "id": "line_11",
+      "speaker": "speaker_1_male",
+      "start": 28.7,
+      "source_end": 39.6,
+      "text": "أريدك مستلقية على ظهرك، عاجزة، رقيقة، ومنفتحة، ولا أكون إلا أنا من يساعدك.",
+      "reference_audio": "assets/reference/new_job/speaker_1_clean.wav"
+    },
+    {
+      "id": "line_12",
+      "speaker": "speaker_2_female",
+      "start": 39.6,
+      "source_end": 43.2,
+      "text": "ثم أريدك بقوة.",
+      "reference_audio": "assets/reference/new_job/speaker_2_clean.wav"
+    },
+    {
+      "id": "line_13",
+      "speaker": "speaker_1_male",
+      "start": 43.2,
+      "source_end": 49.0,
+      "text": "أسمع صوتك ينطق اسمي حين أحلم.",
+      "reference_audio": "assets/reference/new_job/speaker_1_clean.wav"
+    },
+    {
+      "id": "line_14",
+      "speaker": "speaker_1_male",
+      "start": 49.0,
+      "source_end": 53.1,
+      "text": "وحين أستيقظ، تنهمر الدموع على وجهي.",
+      "reference_audio": "assets/reference/new_job/speaker_1_clean.wav"
+    },
+    {
+      "id": "line_15",
+      "speaker": "speaker_1_male",
+      "start": 53.1,
+      "source_end": 55.8,
+      "text": "أشتاق إليك فحسب.",
+      "reference_audio": "assets/reference/new_job/speaker_1_clean.wav"
+    }
+  ]
+}

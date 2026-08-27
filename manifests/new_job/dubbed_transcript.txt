@@ -1,0 +1,46 @@
+Starting Speech-to-Text conversion...
+Transcribing video file: outputs/new_job/arabic_dub_chatterbox_v3.mp4, file size: 3.12 MB
+Transcription may take some time depending on file size and audio length...
+Transcription completed successfully!
+
+TRANSCRIPTION RESULT:
+Total Duration: 59.4 seconds
+Language: ara
+Timestamped segments:
+[00:01.7 - 00:04.1] أنا متأكد أنني لم أخلق للزواج.
+[00:04.1 - 00:05.9] أنا أعزب عن قناعة.
+[00:05.9 - 00:10.5] الزواج سيجعلني مخادعًا، وأنا لا أريد ذلك أبدًا.
+[00:10.5 - 00:12.7] الزواج.
+[00:12.7 - 00:17.3] لا، أنا قوي.
+[00:17.3 - 00:21.5] قوي أمام من؟ آمل ألا يكون ذلك أمامي.
+[00:21.5 - 00:27.5] أظن أن توقعات الآخرين وافتراضاتهم هي ما يسبب الألم.
+[00:27.5 - 00:36.8] أريدك مستلقية على ظهرك، عاجزة، رقيقة، ومنفتحة، ولا أكون إلا أنا من يساعدك.
+[00:36.8 - 00:41.0] ثم أريدك بقوة.
+[00:41.0 - 00:46.3] أسمع صوتك ينطق اسمي حين أحلم.
+[00:46.3 - 00:52.4] أحلم، وحين أستيقظ تنهمر الدموع على وجهي.
+[00:52.4 - 00:54.0] أشتاق إليك فحسب.
+[00:54.0 - 00:55.7] آآآ، بشاء إليك فحسب.
+Complete transcription result saved to: /home/ubuntu/dub22/outputs/new_job/arabic_dub_chatterbox_v3_transcription_20260827_120326.json
+Plain text transcription saved to: /home/ubuntu/dub22/outputs/new_job/arabic_dub_chatterbox_v3_transcription_20260827_120326.txt
+[2J[H[3Jmanus-speech-to-text outputs/new_job/arabic_dub_chatterbox_v3.mp4
+Starting Speech-to-Text conversion...
+Transcribing video file: outputs/new_job/arabic_dub_chatterbox_v3.mp4, file size: 3.12 MB
+Transcription may take some time depending on file size and audio length...
+
+Snippet of transcribed content:
+[00:01.7 - 00:04.1] أنا متأكد أنني لم أخلق للزواج.
+[00:04.1 - 00:05.9] أنا أعزب عن قناعة.
+[00:05.9 - 00:10.5] الزواج سيجعلني مخادعًا، وأنا لا أريد ذلك أبدًا.
+[00:10.5 - 00:12.7] الزواج.
+[00:12.7 - 00:17.3] لا، أنا قوي.
+[00:17.3 - 00:21.5] قوي أمام من؟ آمل ألا يكون ذلك أمامي.
+[00:21.5 - 00:27.5] أظن أن توقعات الآخرين وافتراضاتهم هي ما يسبب الألم.
+[00:27.5 - 00:36.8] أريدك مستلقية على ظهرك، عاجزة، رقيقة، ومنفتحة، ولا أكون إلا أنا من يساعدك.
+[00:36.8 - 00:41.0] ثم أريدك بقوة.
+[00:41.0 - 00:46.3] أسمع صوتك ينطق اسمي حين أحلم.
+[00:46.3 - 00:52.4] أحلم، وحين أستيقظ تنهمر الدموع على وجهي.
+[00:52.4 - 00:54.0] أشتاق إليك فحسب.
+[00:54.0 - 00:55.7] آآآ، بشاء إليك فحسب.
+
+Completed transcription, JSON saved to /home/ubuntu/dub22/outputs/new_job/arabic_dub_chatterbox_v3_transcription_20260827_120326.json
+Plain text transcription saved to /home/ubuntu/dub22/outputs/new_job/arabic_dub_chatterbox_v3_transcription_20260827_120326.txt

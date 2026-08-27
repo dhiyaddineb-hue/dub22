@@ -1,0 +1,7 @@
+# Fish Audio S2 Pro is installed from the official repository in vendor/fish-speech.
+# Recommended setup on a Linux GPU host with about 24GB VRAM:
+#   cd vendor/fish-speech
+#   uv sync --extra cu126 --no-dev
+#   hf download fishaudio/s2-pro --local-dir checkpoints/s2-pro
+# The local sandbox does not contain a GPU, so these commands are intentionally
+# not executed as a production inference environment here.

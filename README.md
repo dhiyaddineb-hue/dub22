@@ -162,3 +162,30 @@ python3 scripts/chatterbox_dub.py \
 ```
 
 تم تشغيل هذا المسار فعليًا على الفيديو الموجود في workspace، ونجح في توليد الصوت وتركيب فيديو صالح مدته 24.842 ثانية. المخرجات تحمل علامة مائية صوتية مدمجة من النموذج وفق توثيقه.
+
+
+## Fish Audio S2 Pro — المسار الأعلى جودة
+
+يوجد محول رسمي داخل `scripts/fish_s2_dub.py` يعتمد على كود Fish Audio S2 Pro، ويحوّل مراجع الصوت إلى VQ tokens ثم يولّد حوارًا عربيًا متعدد المتحدثين قبل دمجه مع الفيديو. يستخدم `manifests/new_job/dialogue_ar_fish_s2.json` النص المرجعي الإنجليزي المطابق لكل متحدث ومراجع الصوت المفصولة.
+
+يتطلب المسار بيئة Linux مع GPU وذاكرة VRAM تقارب 24GB وفق توثيق Fish Audio. بعد تجهيز البيئة وتنزيل الأوزان، يكون التشغيل:
+
+```bash
+cd vendor/fish-speech
+uv sync --extra cu126 --no-dev
+hf download fishaudio/s2-pro --local-dir checkpoints/s2-pro
+cd ../..
+vendor/fish-speech/.venv/bin/python scripts/fish_s2_dub.py \
+  --input assets/input/new_job/source.mp4 \
+  --manifest manifests/new_job/dialogue_ar_fish_s2.json \
+  --output outputs/new_job/arabic_dub_fish_s2_pro.mp4 \
+  --fish-root vendor/fish-speech \
+  --python vendor/fish-speech/.venv/bin/python \
+  --checkpoint checkpoints/s2-pro \
+  --device cuda \
+  --temperature 0.75 \
+  --top-p 0.85 \
+  --max-new-tokens 1400
+```
+
+تم تجهيز الأوزان والبيئة داخل جلسة الاختبار، لكن لم يُترك تشغيل CPU لساعات طويلة؛ بدأ النموذج تحميله واستدلاله بنجاح ثم أُوقف لأن سرعة CPU غير عملية. لا تُرفع الأوزان أو البيئة الافتراضية إلى GitHub، وتبقى كل السكربتات والـ manifests المطلوبة داخل المستودع.

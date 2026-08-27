@@ -6,3 +6,9 @@ __pycache__/
 outputs/*
 !outputs/arabic_dub_v3.mp4
 !outputs/arabic_dub_from_repo.mp4
+
+# Fish Audio S2 Pro local checkout, weights, and runtime environment
+vendor/fish-speech/.venv/
+vendor/fish-speech/checkpoints/
+vendor/fish-speech/.git/
+assets/fish_s2/

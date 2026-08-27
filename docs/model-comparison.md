@@ -7,3 +7,12 @@ Sources:
 - https://github.com/resemble-ai/chatterbox
 - https://huggingface.co/ResembleAI/chatterbox
 - https://www.resemble.ai/learn/models/chatterbox-multilingual
+
+
+Additional comparison: Fun-CosyVoice 3 is reported by its official repository as strong in naturalness and speaker similarity, but its documented nine primary languages do not include Arabic, so it is not selected for this Arabic job. Fish Audio S2 Pro officially lists Arabic support and short-reference voice cloning, with strong multilingual and emotion controls, but its installation documentation requires approximately 24 GB of GPU memory for inference. The current sandbox has no GPU, so S2 Pro is not a practical local candidate here without moving execution to a GPU machine.
+
+Sources:
+
+- https://github.com/FunAudioLLM/CosyVoice
+- https://github.com/fishaudio/fish-speech
+- https://speech.fish.audio/install/

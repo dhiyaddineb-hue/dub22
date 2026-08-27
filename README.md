@@ -114,3 +114,27 @@ python3 -m unittest discover -s tests -v
 [2]: https://elevenlabs.io/docs/api-reference/dubbing/create-project "ElevenLabs Create project API"
 [3]: https://elevenlabs.io/docs/api-reference/dubbing/language-targets/create-language-target "ElevenLabs Create language target API"
 [4]: https://elevenlabs.io/docs/api-reference/dubbing/get-project "ElevenLabs Get project API"
+
+
+## XTTS v2 المحلي ومحاكاة صوت المتحدث
+
+يوجد مسار XTTS v2 محلي داخل `scripts/xtts_dub.py`. يستخدم مقطعًا مرجعيًا منفصلًا لكل متحدث من الصوت الأصلي، ثم يولّد كل جملة عربية كمقطع مستقل ويضعها عند وقت البداية في manifest.
+
+ثبّت الاعتمادات الإضافية:
+
+```bash
+python3 -m pip install -r requirements-xtts.txt
+```
+
+شغّل XTTS v2 على CPU:
+
+```bash
+python3 scripts/xtts_dub.py \
+  --input assets/input/source.mp4 \
+  --manifest manifests/dialogue_ar.json \
+  --output outputs/arabic_dub_xtts_v2.mp4 \
+  --workdir assets/xtts_segments \
+  --device cpu
+```
+
+يمكن استخدام CUDA على جهاز يدعمها بتغيير `--device cuda`. النموذج تم اختباره في هذه البيئة على CPU، ونجح في توليد ستة مقاطع WAV وتركيب فيديو عربي صالح مدته 24.842 ثانية. أُدخلت موافقة المستخدم على شروط CPML غير التجارية قبل تشغيل النموذج. راجع شروط النموذج قبل أي استخدام تجاري أو توزيع.

@@ -9,7 +9,8 @@
       "start": 0.7,
       "source_end": 1.9,
       "text": "تقدر يا فلوكي؟",
-      "audio": "assets/audio/line_01.wav"
+      "audio": "assets/audio/line_01.wav",
+      "reference_audio": "assets/reference/ragnar.wav"
     },
     {
       "id": "line_02",
@@ -17,7 +18,8 @@
       "start": 1.9,
       "source_end": 8.1,
       "text": "أم أنني مخطئ؟",
-      "audio": "assets/audio/line_02.wav"
+      "audio": "assets/audio/line_02.wav",
+      "reference_audio": "assets/reference/ragnar.wav"
     },
     {
       "id": "line_03",
@@ -25,7 +27,8 @@
       "start": 8.1,
       "source_end": 11.1,
       "text": "لا.",
-      "audio": "assets/audio/line_03.wav"
+      "audio": "assets/audio/line_03.wav",
+      "reference_audio": "assets/reference/floki.wav"
     },
     {
       "id": "line_04",
@@ -33,7 +36,8 @@
       "start": 11.1,
       "source_end": 14.0,
       "text": "أستطيع فعلها يا راجنار.",
-      "audio": "assets/audio/line_04.wav"
+      "audio": "assets/audio/line_04.wav",
+      "reference_audio": "assets/reference/floki.wav"
     },
     {
       "id": "line_05",
@@ -41,7 +45,8 @@
       "start": 14.0,
       "source_end": 15.9,
       "text": "أستطيع فعلها من أجلك.",
-      "audio": "assets/audio/line_05.wav"
+      "audio": "assets/audio/line_05.wav",
+      "reference_audio": "assets/reference/floki.wav"
     },
     {
       "id": "line_06",
@@ -49,7 +54,8 @@
       "start": 15.9,
       "source_end": 22.5,
       "text": "كل ما أفعله يا راجنار، هو من أجلك.",
-      "audio": "assets/audio/line_06.wav"
+      "audio": "assets/audio/line_06.wav",
+      "reference_audio": "assets/reference/floki.wav"
     }
   ]
 }

@@ -14,3 +14,6 @@ local-dub:
 
 professional-dub:
 	dub22 run --input assets/input/source.mp4 --output outputs/arabic_dub_elevenlabs.mp4 --source-language en --target-language ar --model-id dubbing_v2 --cloning-strength 7
+
+xtts-dub:
+	python3 scripts/xtts_dub.py --input assets/input/source.mp4 --manifest manifests/dialogue_ar.json --output outputs/arabic_dub_xtts_v2.mp4 --workdir assets/xtts_segments --device cpu

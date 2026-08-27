@@ -1,0 +1,3 @@
+# XTTS v2 local inference (CPU or CUDA)
+coqui-tts[codec]>=0.27,<0.28
+transformers>=4.57,<5

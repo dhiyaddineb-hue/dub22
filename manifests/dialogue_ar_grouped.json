@@ -1,0 +1,23 @@
+{
+  "source": "assets/input/source.mp4",
+  "language": "ar",
+  "voice_mode": "xtts_v2_reference_voice_grouped",
+  "segments": [
+    {
+      "id": "ragnar_dialogue",
+      "speaker": "ragnar_like",
+      "start": 0.7,
+      "source_end": 8.1,
+      "text": "تستطيع فعل ذلك، أليس كذلك يا فلوكي؟ أم أنني مخطئ؟",
+      "reference_audio": "assets/reference/refined/ragnar_clean.wav"
+    },
+    {
+      "id": "floki_dialogue",
+      "speaker": "floki_like",
+      "start": 8.1,
+      "source_end": 22.5,
+      "text": "لا. أستطيع فعل ذلك يا راغنار. أستطيع فعله من أجلك. كل ما أفعله يا راغنار هو من أجلك.",
+      "reference_audio": "assets/reference/refined/floki_clean.wav"
+    }
+  ]
+}

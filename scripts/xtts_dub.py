@@ -36,18 +36,47 @@ def make_silence(path: Path, duration: float, sample_rate: int = 24000) -> None:
     run(["ffmpeg", "-y", "-f", "lavfi", "-i", f"anullsrc=r={sample_rate}:cl=mono", "-t", f"{duration:.3f}", str(path)])
 
 
-def mux_segments(video: Path, rendered: list[tuple[float, Path]], output: Path, duration: float) -> None:
+def probe_duration(path: Path) -> float:
+    result = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "default=noprint_wrappers=1:nokey=1", str(path)],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    return float(result.stdout.strip())
+
+
+def tempo_filter(actual: float, budget: float) -> str:
+    if actual <= budget or budget <= 0:
+        return ""
+    factor = actual / budget
+    filters: list[str] = []
+    while factor > 2.0:
+        filters.append("atempo=2.0")
+        factor /= 2.0
+    filters.append(f"atempo={factor:.6f}")
+    return ",".join(filters)
+
+
+def mux_segments(video: Path, rendered: list[tuple[float, float, Path]], output: Path, duration: float) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="xtts_mix_") as temp:
         bed = Path(temp) / "bed.wav"
         make_silence(bed, duration)
-        inputs = [video, bed, *[path for _, path in rendered]]
+        inputs = [video, bed, *[path for _, _, path in rendered]]
         filters = ["[1:a]anull[a0]"]
         labels = ["[a0]"]
-        for index, (start, _) in enumerate(rendered, start=2):
+        for index, (start, source_end, path) in enumerate(rendered, start=2):
             delay_ms = round(start * 1000)
+            budget = max(0.05, source_end - start)
+            actual = probe_duration(path)
+            tempo = tempo_filter(actual, budget)
             label = f"a{index}"
-            filters.append(f"[{index}:a]adelay={delay_ms}:all=1[{label}]")
+            chain = f"[{index}:a]"
+            if tempo:
+                chain += tempo + ","
+            chain += f"atrim=duration={budget:.3f},asetpts=PTS-STARTPTS,adelay={delay_ms}:all=1[{label}]"
+            filters.append(chain)
             labels.append(f"[{label}]")
         filters.append("".join(labels) + f"amix=inputs={len(labels)}:duration=first:dropout_transition=0:normalize=0[aout]")
         command = ["ffmpeg", "-y"]
@@ -65,6 +94,8 @@ def main() -> int:
     parser.add_argument("--workdir", default="assets/xtts_segments")
     parser.add_argument("--device", default=os.getenv("XTTS_DEVICE", "cpu"), choices=("cpu", "cuda"))
     parser.add_argument("--duration", type=float, default=24.842)
+    parser.add_argument("--temperature", type=float, default=0.65)
+    parser.add_argument("--speed", type=float, default=1.0)
     args = parser.parse_args()
 
     if args.device == "cuda":
@@ -86,7 +117,7 @@ def main() -> int:
     manifest: dict[str, Any] = json.loads(manifest_path.read_text(encoding="utf-8"))
     tts = load_tts(args.device)
     workdir.mkdir(parents=True, exist_ok=True)
-    rendered: list[tuple[float, Path]] = []
+    rendered: list[tuple[float, float, Path]] = []
     for segment in manifest["segments"]:
         reference = Path(segment["reference_audio"])
         if not reference.is_file():
@@ -99,8 +130,14 @@ def main() -> int:
             language="ar",
             file_path=str(output),
             split_sentences=False,
+            temperature=args.temperature,
+            length_penalty=1.0,
+            repetition_penalty=2.0,
+            top_k=50,
+            top_p=0.85,
+            speed=args.speed,
         )
-        rendered.append((float(segment["start"]), output))
+        rendered.append((float(segment["start"]), float(segment.get("source_end", args.duration)), output))
 
     mux_segments(input_video, rendered, Path(args.output), args.duration)
     print(f"Wrote {args.output}")

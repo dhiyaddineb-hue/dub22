@@ -1,0 +1,36 @@
+Starting Speech-to-Text conversion...
+Video file detected: outputs/arabic_dub_xtts_v2_grouped.mp4, file size: 5.95 MB
+File size exceeds limit, converting to audio (64kbps)...
+Converting video to audio (bitrate: 64k)...
+Audio conversion completed. Saved to: outputs/arabic_dub_xtts_v2_grouped_converted_20260827_112856.mp3
+Transcribing audio file: outputs/arabic_dub_xtts_v2_grouped_converted_20260827_112856.mp3, file size: 0.19 MB
+Transcription may take some time depending on file size and audio length...
+Transcription completed successfully!
+
+TRANSCRIPTION RESULT:
+Total Duration: 24.9 seconds
+Language: ara
+Timestamped segments:
+[00:00.7 - 00:07.2] يمكنك فعل ذلك، أليس كذلك يا فالبوكي؟ أن، أنني مخطئ.
+[00:07.2 - 00:16.3] أستطيع فعلها راجينار، أستطيع فعلها من أجله.
+[00:16.3 - 00:19.8] كل ما أفعله يا راجينار هو من أجله.
+Complete transcription result saved to: /home/ubuntu/dub22/outputs/arabic_dub_xtts_v2_grouped_converted_20260827_112856_transcription_20260827_112858.json
+Plain text transcription saved to: /home/ubuntu/dub22/outputs/arabic_dub_xtts_v2_grouped_converted_20260827_112856_transcription_20260827_112858.txt
+
+The video has been automatically converted to an audio file and saved at outputs/arabic_dub_xtts_v2_grouped_converted_20260827_112856.mp3
+[2J[H[3Jmanus-speech-to-text outputs/arabic_dub_xtts_v2_grouped.mp4
+Starting Speech-to-Text conversion...
+Video file detected: outputs/arabic_dub_xtts_v2_grouped.mp4, file size: 5.95 MB
+File size exceeds limit, converting to audio (64kbps)...
+Transcribing audio file: outputs/arabic_dub_xtts_v2_grouped_converted_20260827_112856.mp3, file size: 0.19 MB
+Transcription may take some time depending on file size and audio length...
+
+Snippet of transcribed content:
+[00:00.7 - 00:07.2] يمكنك فعل ذلك، أليس كذلك يا فالبوكي؟ أن، أنني مخطئ.
+[00:07.2 - 00:16.3] أستطيع فعلها راجينار، أستطيع فعلها من أجله.
+[00:16.3 - 00:19.8] كل ما أفعله يا راجينار هو من أجله.
+
+The video has been automatically converted to an audio file and saved at outputs/arabic_dub_xtts_v2_grouped_converted_20260827_112856.mp3
+
+Completed transcription, JSON saved to /home/ubuntu/dub22/outputs/arabic_dub_xtts_v2_grouped_converted_20260827_112856_transcription_20260827_112858.json
+Plain text transcription saved to /home/ubuntu/dub22/outputs/arabic_dub_xtts_v2_grouped_converted_20260827_112856_transcription_20260827_112858.txt

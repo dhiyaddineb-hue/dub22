@@ -1,0 +1,38 @@
+Starting Speech-to-Text conversion...
+Video file detected: outputs/arabic_dub_xtts_v2_best.mp4, file size: 5.89 MB
+File size exceeds limit, converting to audio (64kbps)...
+Converting video to audio (bitrate: 64k)...
+Audio conversion completed. Saved to: outputs/arabic_dub_xtts_v2_best_converted_20260827_112714.mp3
+Transcribing audio file: outputs/arabic_dub_xtts_v2_best_converted_20260827_112714.mp3, file size: 0.19 MB
+Transcription may take some time depending on file size and audio length...
+Transcription completed successfully!
+
+TRANSCRIPTION RESULT:
+Total Duration: 24.9 seconds
+Language: ara
+Timestamped segments:
+[00:00.7 - 00:09.5] أقدر، فلوكي أم أنني مخطئ؟ لا.
+[00:09.5 - 00:13.2] أستطيع فعلها يا رغ نار.
+[00:13.2 - 00:15.4] أستطيع فعلها من أجلك.
+[00:15.4 - 00:19.6] كل ما أفعله يا رغ نار هو من أجلك.
+Complete transcription result saved to: /home/ubuntu/dub22/outputs/arabic_dub_xtts_v2_best_converted_20260827_112714_transcription_20260827_112716.json
+Plain text transcription saved to: /home/ubuntu/dub22/outputs/arabic_dub_xtts_v2_best_converted_20260827_112714_transcription_20260827_112716.txt
+
+The video has been automatically converted to an audio file and saved at outputs/arabic_dub_xtts_v2_best_converted_20260827_112714.mp3
+[2J[H[3Jmanus-speech-to-text outputs/arabic_dub_xtts_v2_best.mp4
+Starting Speech-to-Text conversion...
+Video file detected: outputs/arabic_dub_xtts_v2_best.mp4, file size: 5.89 MB
+File size exceeds limit, converting to audio (64kbps)...
+Transcribing audio file: outputs/arabic_dub_xtts_v2_best_converted_20260827_112714.mp3, file size: 0.19 MB
+Transcription may take some time depending on file size and audio length...
+
+Snippet of transcribed content:
+[00:00.7 - 00:09.5] أقدر، فلوكي أم أنني مخطئ؟ لا.
+[00:09.5 - 00:13.2] أستطيع فعلها يا رغ نار.
+[00:13.2 - 00:15.4] أستطيع فعلها من أجلك.
+[00:15.4 - 00:19.6] كل ما أفعله يا رغ نار هو من أجلك.
+
+The video has been automatically converted to an audio file and saved at outputs/arabic_dub_xtts_v2_best_converted_20260827_112714.mp3
+
+Completed transcription, JSON saved to /home/ubuntu/dub22/outputs/arabic_dub_xtts_v2_best_converted_20260827_112714_transcription_20260827_112716.json
+Plain text transcription saved to /home/ubuntu/dub22/outputs/arabic_dub_xtts_v2_best_converted_20260827_112714_transcription_20260827_112716.txt

@@ -12,3 +12,10 @@ vendor/fish-speech/.venv/
 vendor/fish-speech/checkpoints/
 vendor/fish-speech/.git/
 assets/fish_s2/
+vendor/fish-speech/
+!vendor/fish-speech/README.md
+!vendor/fish-speech/LICENSE
+!vendor/fish-speech/docs/
+!vendor/fish-speech/docs/en/
+!vendor/fish-speech/docs/en/inference.md
+!vendor/fish-speech/docs/en/install.md

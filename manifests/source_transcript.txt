@@ -1,0 +1,42 @@
+Starting Speech-to-Text conversion...
+Video file detected: /home/ubuntu/upload/3dde7ebc7c_Instagram.mp4, file size: 5.99 MB
+File size exceeds limit, converting to audio (64kbps)...
+Converting video to audio (bitrate: 64k)...
+Audio conversion completed. Saved to: /home/ubuntu/upload/3dde7ebc7c_Instagram_converted_20260827_103741.mp3
+Transcribing audio file: /home/ubuntu/upload/3dde7ebc7c_Instagram_converted_20260827_103741.mp3, file size: 0.19 MB
+Transcription may take some time depending on file size and audio length...
+Transcription completed successfully!
+
+TRANSCRIPTION RESULT:
+Total Duration: 24.7 seconds
+Language: eng
+Timestamped segments:
+[00:00.7 - 00:01.9] You can do that, can't you, Floki?
+[00:01.9 - 00:08.1] Or am I wrong?
+[00:08.1 - 00:11.1] No.
+[00:11.1 - 00:14.0] I can do it, Ragnar.
+[00:14.0 - 00:15.9] I can do it for you.
+[00:15.9 - 00:22.5] Everything I do, Ragnar, is for you
+Complete transcription result saved to: /home/ubuntu/upload/3dde7ebc7c_Instagram_converted_20260827_103741_transcription_20260827_103742.json
+Plain text transcription saved to: /home/ubuntu/upload/3dde7ebc7c_Instagram_converted_20260827_103741_transcription_20260827_103742.txt
+
+The video has been automatically converted to an audio file and saved at /home/ubuntu/upload/3dde7ebc7c_Instagram_converted_20260827_103741.mp3
+[2J[H[3Jmanus-speech-to-text /home/ubuntu/upload/3dde7ebc7c_Instagram.mp4
+Starting Speech-to-Text conversion...
+Video file detected: /home/ubuntu/upload/3dde7ebc7c_Instagram.mp4, file size: 5.99 MB
+File size exceeds limit, converting to audio (64kbps)...
+Transcribing audio file: /home/ubuntu/upload/3dde7ebc7c_Instagram_converted_20260827_103741.mp3, file size: 0.19 MB
+Transcription may take some time depending on file size and audio length...
+
+Snippet of transcribed content:
+[00:00.7 - 00:01.9] You can do that, can't you, Floki?
+[00:01.9 - 00:08.1] Or am I wrong?
+[00:08.1 - 00:11.1] No.
+[00:11.1 - 00:14.0] I can do it, Ragnar.
+[00:14.0 - 00:15.9] I can do it for you.
+[00:15.9 - 00:22.5] Everything I do, Ragnar, is for you
+
+The video has been automatically converted to an audio file and saved at /home/ubuntu/upload/3dde7ebc7c_Instagram_converted_20260827_103741.mp3
+
+Completed transcription, JSON saved to /home/ubuntu/upload/3dde7ebc7c_Instagram_converted_20260827_103741_transcription_20260827_103742.json
+Plain text transcription saved to /home/ubuntu/upload/3dde7ebc7c_Instagram_converted_20260827_103741_transcription_20260827_103742.txt

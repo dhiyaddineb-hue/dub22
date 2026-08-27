@@ -1,0 +1,55 @@
+{
+  "source": "assets/input/source.mp4",
+  "language": "ar-001",
+  "voice_mode": "synthetic_voice_match_not_true_clone",
+  "segments": [
+    {
+      "id": "line_01",
+      "speaker": "ragnar_like",
+      "start": 0.7,
+      "source_end": 1.9,
+      "text": "تقدر يا فلوكي؟",
+      "audio": "assets/audio/line_01.wav"
+    },
+    {
+      "id": "line_02",
+      "speaker": "ragnar_like",
+      "start": 1.9,
+      "source_end": 8.1,
+      "text": "أم أنني مخطئ؟",
+      "audio": "assets/audio/line_02.wav"
+    },
+    {
+      "id": "line_03",
+      "speaker": "floki_like",
+      "start": 8.1,
+      "source_end": 11.1,
+      "text": "لا.",
+      "audio": "assets/audio/line_03.wav"
+    },
+    {
+      "id": "line_04",
+      "speaker": "floki_like",
+      "start": 11.1,
+      "source_end": 14.0,
+      "text": "أستطيع فعلها يا راجنار.",
+      "audio": "assets/audio/line_04.wav"
+    },
+    {
+      "id": "line_05",
+      "speaker": "floki_like",
+      "start": 14.0,
+      "source_end": 15.9,
+      "text": "أستطيع فعلها من أجلك.",
+      "audio": "assets/audio/line_05.wav"
+    },
+    {
+      "id": "line_06",
+      "speaker": "floki_like",
+      "start": 15.9,
+      "source_end": 22.5,
+      "text": "كل ما أفعله يا راجنار، هو من أجلك.",
+      "audio": "assets/audio/line_06.wav"
+    }
+  ]
+}

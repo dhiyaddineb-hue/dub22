@@ -19,3 +19,6 @@ vendor/fish-speech/
 !vendor/fish-speech/docs/en/
 !vendor/fish-speech/docs/en/inference.md
 !vendor/fish-speech/docs/en/install.md
+vendor/FireRedTTS3/
+!vendor/FireRedTTS3/README.md
+!vendor/FireRedTTS3/LICENSE

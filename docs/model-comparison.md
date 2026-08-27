@@ -16,3 +16,11 @@ Sources:
 - https://github.com/FunAudioLLM/CosyVoice
 - https://github.com/fishaudio/fish-speech
 - https://speech.fish.audio/install/
+
+
+FireRedTTS3 is a newer official candidate. Its official repository states that FireRedTTS3-Base supports zero-shot voice cloning across 24 languages including Arabic, while FireRedTTS3-Instruct adds voice design and speech editing. The documented Python API accepts a prompt audio plus matching prompt text and a target language, which suits this dubbing workflow. The repository reports a 1.5B-class system and a direct pip install path; this is substantially more practical for Colab than Fish S2 Pro's 4B model and 24GB-VRAM recommendation. The official repository also documents Arabic explicitly, unlike Qwen3-TTS's current 10-language release, which does not list Arabic.
+
+Sources:
+
+- https://github.com/FireRedTeam/FireRedTTS3
+- https://github.com/QwenLM/Qwen3-TTS

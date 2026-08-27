@@ -1,0 +1,8 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+outputs/*
+!outputs/arabic_dub_v3.mp4
+!outputs/arabic_dub_from_repo.mp4

@@ -1,35 +1,116 @@
-# dub22 — Arabic Dubbing Workspace
+# dub22 — Professional Arabic Dubbing Workspace
 
-هذا المستودع مساحة عمل لخط أنابيب دبلجة فيديو قصيرة إلى العربية. يحتوي المشروع على الفيديو الأصلي، تفريغ الحوار، مخطط التوقيت، المقاطع الصوتية العربية، ونسخة فيديو ناتجة.
+`dub22` هو خط تشغيل قابل لإعادة الاستخدام لدبلجة الفيديو إلى العربية. يوفّر مسارًا محليًا لفحص المدخلات وإعادة تركيب الصوت، ومسارًا احترافيًا اختياريًا عبر ElevenLabs Dubbing v2 عندما يوفّر المستخدم مفتاح API في بيئته. لا تُحفظ المفاتيح داخل المستودع.
 
-## الحالة الحالية
+> **النتيجة الواقعية:** مسار Dubbing v2 هو المسار المناسب عندما تكون الأولوية للحفاظ على هوية المتحدثين، النبرة، الإيقاع، التوقيت، والموسيقى الخلفية. أما الملفات الموجودة في `assets/audio/` فهي مخرجات اصطناعية محلية للاختبار وليست استنساخًا مطابقًا للممثلين.
 
-تم تنفيذ نسخة تجريبية باستخدام أصوات عربية اصطناعية قريبة في الطابع الدرامي، مع تركيب كل جملة عند نقطة دخولها الأصلية. هذه الأصوات ليست استنساخًا مطابقًا لهوية الممثلين؛ الاستنساخ الحقيقي يحتاج نموذج Voice Cloning مخصصًا غير متاح ضمن الأدوات المدمجة في جلسة العمل.
+## ما الذي توفره الأداة؟
 
-## بنية الملفات
-
-| المسار | المحتوى |
+| الوظيفة | التنفيذ |
 |---|---|
-| `assets/input/source.mp4` | الفيديو الأصلي |
-| `manifests/source_transcript.txt` | التفريغ الزمني الأصلي |
-| `manifests/dialogue_ar.json` | الحوار العربي والتوقيتات |
-| `assets/audio/` | مقطع صوتي مستقل لكل جملة |
-| `scripts/build_dub.sh` | سكربت إعادة تركيب الفيديو |
-| `outputs/arabic_dub_v3.mp4` | النسخة التجريبية الحالية |
+| تفريغ الكلام | `manus-speech-to-text` عند تشغيله في بيئة Manus أو أي تفريغ خارجي يكتب إلى manifest |
+| دبلجة احترافية بصوت قريب من الأصلي | ElevenLabs Dubbing v2 عبر `scripts/dub22.py run` |
+| التحكم في قوة محاكاة الصوت | `--cloning-strength` من 0 إلى 10، والافتراضي 7 |
+| العربية | `--target-language ar` |
+| المتابعة وإعادة المحاولة | أوامر `create`, `status`, و`run` مع polling قابل للضبط |
+| تركيب محلي قابل لإعادة البناء | `scripts/build_dub.sh` باستخدام مقاطع WAV وتوقيتات manifest |
+| حماية الأسرار | متغير `ELEVENLABS_API_KEY` خارج Git، مع `.env.example` فقط |
+| اختبارات | `python3 -m unittest discover -s tests -v` |
 
-## التشغيل
+## التشغيل السريع للمسار الاحترافي
 
-يتطلب التشغيل وجود `ffmpeg`:
+ثبّت الاعتمادية الوحيدة المطلوبة:
+
+```bash
+python3 -m pip install -r requirements.txt
+```
+
+ضع المفتاح في جلسة التشغيل فقط:
+
+```bash
+export ELEVENLABS_API_KEY='ضع-المفتاح-هنا'
+```
+
+افحص البيئة:
+
+```bash
+python3 scripts/dub22.py doctor
+```
+
+شغّل الدبلجة العربية ذات محاكاة الصوت، وانتظر حتى تكتمل، ثم نزّل الفيديو الناتج:
+
+```bash
+python3 scripts/dub22.py run \
+  --input assets/input/source.mp4 \
+  --output outputs/arabic_dub_elevenlabs.mp4 \
+  --source-language en \
+  --target-language ar \
+  --model-id dubbing_v2 \
+  --cloning-strength 7 \
+  --reference dub22-arabic-test
+```
+
+للاستخدام على مراحل، أنشئ المشروع والهدف أولًا:
+
+```bash
+python3 scripts/dub22.py create \
+  --input assets/input/source.mp4 \
+  --source-language en \
+  --target-language ar \
+  --model-id dubbing_v2 \
+  --cloning-strength 7
+```
+
+ثم استخدم المعرّفين اللذين أعادهما الأمر:
+
+```bash
+python3 scripts/dub22.py status \
+  --project-id PROJECT_ID \
+  --language-id LANGUAGE_ID
+```
+
+## المسار المحلي للاختبار
+
+إذا كانت المقاطع العربية موجودة داخل `assets/audio/`، يمكن إعادة تركيب الفيديو دون اتصال خارجي:
 
 ```bash
 chmod +x scripts/build_dub.sh
-./scripts/build_dub.sh
+./scripts/build_dub.sh assets/input/source.mp4 outputs/arabic_dub_local.mp4
 ```
 
-يمكن تمرير مسارات مخصصة:
+هذا المسار يحافظ على الصورة الأصلية ويستبدل مسار الصوت، ويضع كل مقطع عند وقت دخوله الموصوف في `manifests/dialogue_ar.json`. لتحديث الأداء، استبدل ملفات WAV فقط ثم أعد تشغيل السكربت.
+
+## بنية المشروع
+
+| المسار | المحتوى |
+|---|---|
+| `assets/input/source.mp4` | الفيديو الأصلي المستخدم في الاختبار |
+| `assets/audio/` | مقطع صوتي مستقل لكل جملة للاختبار المحلي |
+| `manifests/dialogue_ar.json` | النص العربي، المتحدث، وقت البداية، وملف الصوت |
+| `manifests/source_transcript.txt` | التفريغ الزمني الأصلي |
+| `scripts/dub22.py` | عميل CLI للدبلجة الاحترافية ومتابعة النتائج |
+| `scripts/build_dub.sh` | تركيب محلي قابل لإعادة التشغيل عبر FFmpeg |
+| `tests/test_cli.py` | اختبارات محلية لا تحتاج مفتاح API |
+| `outputs/` | النتائج المحلية أو المنزّلة، مع استثناء النتائج التجريبية المتتبعة فقط |
+
+## الاختبارات
 
 ```bash
-./scripts/build_dub.sh path/to/source.mp4 path/to/output.mp4
+python3 -m py_compile scripts/dub22.py
+python3 -m unittest discover -s tests -v
 ```
 
-لتحسين النسخة الاحترافية، استبدل ملفات WAV داخل `assets/audio/` بمقاطع صوتية مولدة من محرك دبلجة أو استنساخ صوت يدعم العربية، ثم أعد تشغيل السكربت. يحافظ السكربت على الصورة الأصلية ويستبدل المسار الصوتي ويضع الصمت في الفواصل غير الحوارية.
+## حدود الاستخدام
+
+يتطلب المسار الاحترافي مفتاح API صالحًا وحسابًا يملك صلاحية تشغيل خدمة الدبلجة. لا يضع المشروع أي مفتاح أو credential داخل Git. كما أن استخدام أصوات أشخاص حقيقيين ينبغي أن يكون بتفويض مناسب؛ الأداة لا تتجاوز ضوابط المزود ولا تدّعي أن المسار المحلي استنساخ حقيقي.
+
+## مراجع المزود
+
+تستند واجهة المزود المستخدمة هنا إلى التوثيق الرسمي لإنشاء مشروع دبلجة، إنشاء هدف لغة، وجلب حالة المشروع والنتائج [1] [2] [3].
+
+### References
+
+[1]: https://elevenlabs.io/docs/overview/capabilities/dubbing "ElevenLabs Dubbing capabilities"
+[2]: https://elevenlabs.io/docs/api-reference/dubbing/create-project "ElevenLabs Create project API"
+[3]: https://elevenlabs.io/docs/api-reference/dubbing/language-targets/create-language-target "ElevenLabs Create language target API"
+[4]: https://elevenlabs.io/docs/api-reference/dubbing/get-project "ElevenLabs Get project API"
